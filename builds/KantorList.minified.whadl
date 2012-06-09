@@ -1,0 +1,56 @@
+build SpaceMarines $KantorDropList {
+   unit PedroKantor {
+      slot HQ;
+   }
+   unit ScoutSquad {
+      slot TROOP;
+      member 3 Scout (CamoCloak,SniperRifle);
+      member Scout (CamoCloak,MissileLauncher);
+      member ScoutSergeant (SniperRifle,TeleportHomer,CamoCloak);
+   }
+   unit ScoutSquad {
+      slot TROOP;
+      member 4 Scout (CamoCloak);
+      member ScoutSergeant (PowerWeapon,CamoCloak);
+   }
+   unit TacticalSquad {
+      slot TROOP;
+      composition (9 SpaceMarine,SpaceMarineSergeant);
+      linked ($DropPod1);
+      member SpaceMarine $HotFuzz (MultiMelta);
+      member SpaceMarine $Smokey (Flamer);
+      member SpaceMarineSergeant (PowerWeapon,BoltPistol);
+   }
+   unit SternguardVeteranSquad {
+      slot ELITE;
+      composition (VeteranSergeant,9 Veteran);
+      linked ($DropPod2);
+      member VeteranSergeant (PowerFist,Boltgun);
+      member 2 Veteran (Meltagun);
+      member 2 Veteran (CombiFlamer);
+   }
+   unit SternguardVeteranSquad {
+      slot ELITE;
+      composition (VeteranSergeant,9 Veteran);
+      linked ($DropPod3);
+      member VeteranSergeant (Boltgun,LightningClaw,MeltaBombs);
+      member 2 Veteran (Meltagun);
+      member 2 Veteran (CombiFlamer);
+   }
+   unit DropPod $DropPod1 {
+      slot TRANSPORT;
+      member DropPod (LocatorBeacon);
+   }
+   unit DropPod $DropPod2 {
+      slot TRANSPORT;
+      member DropPod (LocatorBeacon);
+   }
+   unit DropPod $DropPod3 {
+      slot TRANSPORT;
+      member DropPod (LocatorBeacon);
+   }
+   unit TerminatorAssaultSquad {
+      slot ELITE;
+      member 5 Terminator (ThunderHammer,StormShield);
+   }
+}

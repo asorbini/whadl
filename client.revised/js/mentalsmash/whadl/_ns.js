@@ -1,0 +1,1 @@
+org.mentalsmash.ns('whadl');
