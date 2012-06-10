@@ -22,7 +22,7 @@ var SelectBuildTypeDiv = function(armies,createBuildCallback) {
 	);
 	var select = $('div.content > ul.menu > li > span.value > form > select',div);
 	
-	var ctrlForm = new ControlForm(true,true,['Hide Menu','Show Menu'],$('div.content',div));
+	var ctrlForm = new ControlForm(true,false,['Hide Menu','Show Menu'],$('div.content',div));
 	$('div.title',div).append(ctrlForm.form);
 	$('div.content',div).hide();
 	

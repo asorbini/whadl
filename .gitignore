@@ -1,0 +1,11 @@
+/dist
+/target
+/jtb-1.4.2.jar
+/jtb132.jar
+/core-class
+/plugins-class
+/ws-class
+/.settings
+/.classpath
+/.project
+/bin

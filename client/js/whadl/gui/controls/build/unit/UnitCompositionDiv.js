@@ -92,7 +92,7 @@ var UnitCompositionDiv = function(unit,onUpdate) {
 		$('div.edit-member > div.title input[name="first"]',membersDiv).each(function(i,el){
 			el = $(el);
 			el.click(function(e){
-				membersDiv.scrollTo(el,500);
+//				membersDiv.scrollTo(el,500);
 			});
 		});
 		
@@ -121,7 +121,7 @@ var UnitCompositionDiv = function(unit,onUpdate) {
 		membersDiv.append(patternEditor.div);
 	}
 
-	var ctrlForm = new ControlForm(false,true,['OK','Edit'],membersDiv,[],function(){
+	var ctrlForm = new ControlForm(false,false,['OK','Edit'],membersDiv,[],function(){
 		$('form.maximized > input[value="OK"]',membersDiv).click();
 	});
 	

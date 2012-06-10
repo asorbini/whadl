@@ -2,7 +2,7 @@ var SelectUnitTypeDiv = function(buildNum, army,createUnitCallback) {
 	var unitsNum = 0;
 	
 	var div = $(
-		'<div class="dialog">'+
+		'<div class="dialog unit-selector">'+
 			'<div class="title"><h3>Menu</h3></div>'+
 			'<div class="content">'+
 				'<ul class="menu">'+
@@ -22,7 +22,7 @@ var SelectUnitTypeDiv = function(buildNum, army,createUnitCallback) {
 	);
 	var select = $('div.content > ul.menu > li > span.value > form > select',div);
 	
-	var ctrlForm = new ControlForm(false,true,['Hide Menu','Show Menu'],$('div.content',div));
+	var ctrlForm = new ControlForm(false,false,['Hide Menu','Show Menu'],$('div.content',div));
 	$('div.title',div).append(ctrlForm.form);
 	
 	for (var i = 0; i < army.units.length; i++) {
@@ -38,7 +38,7 @@ var SelectUnitTypeDiv = function(buildNum, army,createUnitCallback) {
 	form.submit(function(){
 		var army = div.data('army');
 		var name = $('option:selected',select)[0].text;
-		$('form.ctrl > input[name="first"]',div).click();
+//		$('form.ctrl > input[name="first"]',div).click();
 		createUnitCallback(buildNum, army,name,unitsNum++);
 		return false;
 	});

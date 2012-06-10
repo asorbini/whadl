@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This work is licensed under the Creative Commons Attribution-ShareAlike 
+	3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ 
+	or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain 
+	View, California, 94041, USA. -->
+
+<project default="deploy">
+
+	<property name="whadl.version" value="0.1" />
+
+	<property name="whadl.dist.dir" value="dist" />
+	<property name="whadl.deploy.dir" value="../AndroidHellow/libs" />
+
+	<property name="whadl.libs.classpath"
+		value="jar/slf4j-api-1.6.4.jar:jar/logback-classic-1.0.1.jar:jar/logback-core-1.0.1.jar" />
+
+	<!-- CORE MODULE PROPERTIES DEFINITION -->
+	<property name="whadl.core.src" value="core-src" />
+	<property name="whadl.core.src.parser" value="parser-src" />
+	<property name="whadl.core.src.tmpdir" value="core-class" />
+	<property name="whadl.core.src.classpath"
+		value="${whadl.libs.classpath}:${whadl.core.src.tmpdir}" />
+	<property name="whadl.core.jar.name" value="whadl-${whadl.version}-core.jar" />
+	<property name="whadl.core.jar.path" value="${whadl.dist.dir}/${whadl.core.jar.name}" />
+	<property name="whadl.core.run.class" value="org.mentalsmash.whadl.Whadl" />
+	<property name="whadl.core.run.classpath"
+		value="${whadl.core.src.classpath}:${whadl.core.jar.path}" />
+	<!-- //CORE MODULE PROPERTIES DEFINITION -->
+
+
+	<!-- PLUGINS MODULE PROPERTIES DEFINITION -->
+	<property name="whadl.plugins.src" value="plugins-src" />
+	<property name="whadl.plugins.src.tmpdir" value="plugins-class" />
+	<property name="whadl.plugins.src.classpath"
+		value="${whadl.libs.classpath}:${whadl.core.jar.path}" />
+	<property name="whadl.plugins.jar.name" value="whadl-${whadl.version}-plugins.jar" />
+	<property name="whadl.plugins.jar.path" value="${whadl.dist.dir}/${whadl.plugins.jar.name}" />
+	<property name="whadl.plugins.run.class" value="org.mentalsmash.whadl.plugins.WhadlPlus" />
+	<property name="whadl.plugins.run.classpath"
+		value="${whadl.plugins.src.classpath}:${whadl.plugins.jar.path}" />
+	<!-- //PLUGINS MODULE PROPERTIES DEFINITION -->
+
+	<!-- WS MODULE PROPERTIES DEFINITION -->
+	<property name="whadl.ws.src" value="ws-src" />
+	<property name="whadl.ws.src.tmpdir" value="ws-class" />
+	<property name="whadl.ws.src.classpath"
+		value="${whadl.libs.classpath}:
+			   ${whadl.core.jar.path}:
+			   ${whadl.plugins.jar.path}:
+			   jar/jersey-1.9.1/jersey-core-1.9.1.jar:
+			   jar/jersey-1.9.1/jersey-server-1.9.1.jar:
+			   jar/jersey-1.9.1/jersey-grizzly-1.9.1.jar:
+			   jar/grizzly-1.9.49/grizzly-utils-1.9.49.jar:
+			   jar/grizzly-1.9.49/grizzly-http-1.9.49.jar:
+			   jar/grizzly-1.9.49/grizzly-http-servlet-1.9.49.jar:
+			   jar/grizzly-1.9.49/servlet-api-2.5.jar" />
+	<property name="whadl.ws.jar.name" value="whadl-${whadl.version}-ws.jar" />
+	<property name="whadl.ws.jar.path" value="${whadl.dist.dir}/${whadl.ws.jar.name}" />
+	<property name="whadl.ws.run.class" value="org.mentalsmash.whadl.ws.WhadlWSApplication" />
+	<property name="whadl.ws.run.classpath"
+		value="${whadl.ws.src.classpath}:
+			   jar/grizzly-1.9.49/grizzly-framework-1.9.49.jar:
+			   ${whadl.ws.jar.path}" />
+	<!-- //WS MODULE PROPERTIES DEFINITION -->
+
+	<!-- GLOBAL TARGET DEFINITION -->
+	<target name="jar.init">
+		<mkdir dir="${whadl.dist.dir}" />
+	</target>
+
+	<target name="clean" depends="core.clean,plugins.clean,ws.clean">
+		<delete dir="${whadl.dist.dir}" quiet="true" />
+	</target>
+
+	<target name="jar" depends="core.jar,plugins.jar,ws.jar">
+	</target>
+
+	<target name="deploy" depends="jar">
+		<copy todir="${whadl.deploy.dir}">
+			<fileset dir="${whadl.dist.dir}">
+				<include name="**/*.jar" />
+			</fileset>
+		</copy>
+	</target>
+	<!-- //GLOBAL TARGET DEFINITION -->
+
+	<!-- CORE MODULE TARGETS DEFINITION -->
+	<target name="core.init">
+		<mkdir dir="${whadl.core.src.tmpdir}" />
+	</target>
+
+	<target name="core.clean">
+		<delete dir="${whadl.core.src.tmpdir}" quiet="true" />
+		<delete file="${whadl.core.jar.path}" quiet="true" />
+	</target>
+
+	<target name="core.compile" depends="core.init">
+		<javac destdir="${whadl.core.src.tmpdir}"
+			classpath="${whadl.core.src.classpath}:${whadl.core.src.tmpdir}">
+			<src path="${whadl.core.src}" />
+			<src path="${whadl.core.src.parser}" />
+			<include name="**/*.java" />
+		</javac>
+		<copy todir="${whadl.core.src.tmpdir}">
+			<fileset dir="${whadl.core.src}">
+				<include name="**/*.xml" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="core.jar" depends="core.compile,jar.init">
+		<jar destfile="${whadl.core.jar.path}" basedir="${whadl.core.src.tmpdir}" />
+	</target>
+
+	<target name="core.run" depends="core.jar">
+		<java classname="${whadl.core.run.class}" classpath="${whadl.core.run.classpath}">
+		</java>
+	</target>
+
+	<!-- //CORE MODULE TARGETS DEFINITION -->
+
+	<!-- PLUGINS MODULE TARGETS DEFINITION -->
+	<target name="plugins.clean">
+		<delete dir="${whadl.plugins.src.tmpdir}" quiet="true" />
+		<delete file="${whadl.plugins.jar.path}" quiet="true" />
+	</target>
+
+	<target name="plugins.init">
+		<mkdir dir="${whadl.plugins.src.tmpdir}" />
+	</target>
+
+	<target name="plugins.compile" depends="plugins.init,core.jar">
+		<javac destdir="${whadl.plugins.src.tmpdir}"
+			classpath="${whadl.plugins.src.classpath}:${whadl.plugins.src.tmpdir}">
+			<src path="${whadl.plugins.src}" />
+			<include name="**/*.java" />
+		</javac>
+		<copy todir="${whadl.plugins.src.tmpdir}">
+			<fileset dir="${whadl.plugins.src}">
+				<include name="**/*.army" />
+				<include name="**/*.build" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="plugins.jar" depends="plugins.compile,jar.init">
+		<jar destfile="${whadl.plugins.jar.path}" basedir="${whadl.plugins.src.tmpdir}" />
+	</target>
+
+	<target name="plugins.run" depends="plugins.jar">
+		<java classname="${whadl.plugins.run.class}" classpath="${whadl.plugins.run.classpath}">
+		</java>
+	</target>
+
+	<!-- // PLUGINS MODULE TARGETS DEFINITION -->
+
+	<!-- WS MODULE TARGETS DEFINITION -->
+	<target name="ws.clean">
+		<delete dir="${whadl.ws.src.tmpdir}" quiet="true" />
+		<delete file="${whadl.ws.jar.path}" quiet="true" />
+	</target>
+
+	<target name="ws.init">
+		<mkdir dir="${whadl.ws.src.tmpdir}" />
+	</target>
+
+	<target name="ws.compile" depends="ws.init,core.jar,plugins.jar">
+		<javac destdir="${whadl.ws.src.tmpdir}"
+			classpath="${whadl.ws.src.classpath}:${whadl.ws.src.tmpdir}">
+			<src path="${whadl.ws.src}" />
+			<include name="**/*.java" />
+		</javac>
+	</target>
+
+	<target name="ws.jar" depends="ws.compile,jar.init">
+		<jar destfile="${whadl.ws.jar.path}" basedir="${whadl.ws.src.tmpdir}" />
+	</target>
+
+	<target name="ws.run" depends="ws.jar">
+		<java classname="${whadl.ws.run.class}" classpath="${whadl.ws.run.classpath}">
+		</java>
+	</target>
+
+	<!-- //WS MODULE TARGETS DEFINITION -->
+
+</project>

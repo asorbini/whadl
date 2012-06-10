@@ -25,10 +25,10 @@ var EditMemberDiv = function(member, memberNum,onSummarize,container) {
 			
 			el.click(function(){
 				if (open) {
-					container.scrollTo(div,500);
+					/*container.scrollTo(div,500);*/
 					open = false;
 				} else {
-					container.scrollTo(equipmentEditor.div,500);
+					/*container.scrollTo(equipmentEditor.div,500);*/
 					open = true;
 				}
 			});
@@ -38,7 +38,7 @@ var EditMemberDiv = function(member, memberNum,onSummarize,container) {
 		var notFade = new Array();
 		notFade[0] = 'pattern';
 		
-		var ctrlForm = new ControlForm(true,true,['OK','Edit'],content,notFade);
+		var ctrlForm = new ControlForm(true,false,['OK','Edit'],content,notFade);
 		
 		divTitle.append(ctrlForm.form);
 		content.hide();

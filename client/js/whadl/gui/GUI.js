@@ -7,7 +7,7 @@ var GUI = function() {
 	var newArmyDiv = null;
 		
 	var open = true;
-	var ctrlForm = new ControlForm(false,true,["Close This","Show"],$('body > div.title'),new Array(),function() {
+	var ctrlForm = new ControlForm(false,false,["Close This","Show"],$('body > div.title'),new Array(),function() {
 		open = false;
 	});
 	$('body > div.title').append(ctrlForm.form);
@@ -68,7 +68,7 @@ var GUI = function() {
 		el.hide(0);
 		el.insertAfter(prec);
 		el.fadeIn(500);
-		$(contentDiv).delay(300).scrollTo(el,300);
+//		$(contentDiv).delay(300).scrollTo(el,300);
 	};
 	
 	this.notifyNewUnit = function(units) {
@@ -182,7 +182,7 @@ var GUI = function() {
 			if (onComplete) onComplete();
 		});
 		//contentDiv.delay(300).scrollTo(el,300);
-		$(contentDiv).delay(500).scrollTo(el,300);
+//		$(contentDiv).delay(500).scrollTo(el,300);
 	};
 	
 };

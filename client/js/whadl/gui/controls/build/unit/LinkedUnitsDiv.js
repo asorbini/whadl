@@ -10,7 +10,7 @@ var LinkedUnitsDiv = function(pattern,buildDiv) {
 		'</div>'
 	);
 	
-	var ctrlForm = new ControlForm(false,true,['OK','Edit'],$('div.content',div));
+	var ctrlForm = new ControlForm(false,false,['OK','Edit'],$('div.content',div));
 	$('div.title',div).append(ctrlForm.form);
 	
 	var ChoicesBox = function(buildDiv) {

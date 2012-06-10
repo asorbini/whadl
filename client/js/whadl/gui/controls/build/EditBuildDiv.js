@@ -37,7 +37,7 @@ var EditBuildDiv = function(gui,army,buildNumber,createUnitCallback,onUpdate,onR
 	};
 	
 	this.setName = function(name) {
-		alert("setting name to "+name);
+//		alert("setting name to "+name);
 		this.name = name;
 		gui.updatedBuild(this);
 	};
@@ -149,7 +149,7 @@ var EditBuildDiv = function(gui,army,buildNumber,createUnitCallback,onUpdate,onR
 	};
 	
 	
-	ctrlForm = new ControlForm(false,true,['OK','Edit','Delete','Export'],content,new Array(),function(){
+	ctrlForm = new ControlForm(false,false,['OK','Edit','Delete','Export'],content,new Array(),function(){
 		$('div.edit-unit > div.title > form.maximized > input[name="first"]').click();
 	},null,(onRemove)?rmFunc:null);
 	

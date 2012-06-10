@@ -124,7 +124,7 @@ var EditUnitDiv = function(buildDiv,unit,unitNumber,onUpdate, onRemove) {
 	
 	div.append(content);
 	
-	var ctrlForm = new ControlForm(false,true,['OK','Edit','Delete'],content,new Array(),function(){
+	var ctrlForm = new ControlForm(false,false,['Hide','Show','Delete'],content,new Array(),function(){
 		$('div.composition > div.title > form.maximized > input[name="first"]',div).click();
 		$('div.upgrades > div.title > form.maximized > input[name="first"]',div).click();
 		$('div.linked > div.title > form.maximized > input[name="first"]',div).click();

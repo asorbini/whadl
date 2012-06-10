@@ -89,9 +89,9 @@ var ExportDiv = function(editor) {
 				msgP.hide();
 				resContent.append(msgP);
 				msgP.fadeIn(300);
-				$('body > div.content').delay(100).scrollTo(resContent,200);
+//				$('body > div.content').delay(100).scrollTo(resContent,200);
 			});
-			$('body > div.content').scrollTo(resContent,500);
+//			$('body > div.content').scrollTo(resContent,500);
 		
 			//resultCtrl.openIfClosed();
 			//alert("OK!");
@@ -106,7 +106,7 @@ var ExportDiv = function(editor) {
 	
 	
 	
-	reviewCtrl = new ControlForm(true,true,['Hide','Show','Generate','Validate'],$('div.content',reviewDiv),new Array(),null,function(){
+	reviewCtrl = new ControlForm(true,false,['Hide','Show','Generate','Validate'],$('div.content',reviewDiv),new Array(),null,function(){
 		if ($('pre',div).text()=="") {
 			generate();
 		}
@@ -121,12 +121,12 @@ var ExportDiv = function(editor) {
 	$('div.title',reviewDiv).append(reviewCtrl.form);
 	$('div.content',reviewDiv).hide();
 	
-	var resultCtrl = new ControlForm(true,true,["Hide","Show"],$('div.content',resultDiv));
+	var resultCtrl = new ControlForm(true,false,["Hide","Show"],$('div.content',resultDiv));
 	
 	$('div.title',resultDiv).append(resultCtrl.form);
 	
 	
-	var ctrlForm = new ControlForm(true,true,['Hide','Show'],content,['result']);
+	var ctrlForm = new ControlForm(true,false,['Hide','Show'],content,['result']);
 	
 	title.append(ctrlForm.form);
 	

@@ -1,0 +1,742 @@
+/**
+*
+* This work is licensed under the Creative Commons
+* Attribution-ShareAlike 3.0 Unported License. To
+* view a copy of this license, visit
+* http://creativecommons.org/licenses/by-sa/3.0/
+* or send a letter to Creative Commons, 444 Castro
+* Street, Suite 900, Mountain View, California,
+* 94041, USA.
+* 
+**/
+
+army TauEmpire {
+
+	
+	unit Commander {
+		slots * HQ;
+		composition (Shaso for 75 or Shasel for 50);
+		member Shaso {
+			equipment(XV8CrisisBattlesuit,
+			
+				(	(TwinLinkedBurstCannon for 12 or
+					TwinLinkedFlamer for 6 or
+					TwinLinkedFusionBlaster for 18 or
+					TwinLinkedMissilePod for 18 or
+					TwinLinkedPlasmaRifle for 18) or
+					
+				(   (AirburstingFragmentationProjector for 20 or
+					CyclicIonBlaster for 15 or
+					CommandAndControlNode for 10 or
+					PositionalRelay for 15 or
+					VectoredRetroThrusters for 10 or
+					BurstCannon for 8 or
+					Flamer for 4 or
+					FusionBlaster for 12 or
+					MissilePod for 12 or
+					PlasmaRifle for 12 or
+					AdvancedStabilizationSystem for 10 or
+					BlacksunFilter for 3 or
+					DroneController for 0 or
+					MultiTracker for 5 or
+					ShieldGenerator for 20 or
+					TargetLock for 5 or
+					TargettingArray for 10),
+					(AirburstingFragmentationProjector for 20 or
+					CyclicIonBlaster for 15 or
+					CommandAndControlNode for 10 or
+					PositionalRelay for 15 or
+					VectoredRetroThrusters for 10 or
+					BurstCannon for 8 or
+					Flamer for 4 or
+					FusionBlaster for 12 or
+					MissilePod for 12 or
+					PlasmaRifle for 12 or
+					AdvancedStabilizationSystem for 10 or
+					BlacksunFilter for 3 or
+					DroneController for 0 or
+					MultiTracker for 5 or
+					ShieldGenerator for 20 or
+					TargetLock for 5 or
+					TargettingArray for 10)  )   ),
+					
+					(AirburstingFragmentationProjector for 20 or
+					CyclicIonBlaster for 15 or
+					CommandAndControlNode for 10 or
+					PositionalRelay for 15 or
+					VectoredRetroThrusters for 10 or
+					BurstCannon for 8 or
+					Flamer for 4 or
+					FusionBlaster for 12 or
+					MissilePod for 12 or
+					PlasmaRifle for 12 or
+					AdvancedStabilizationSystem for 10 or
+					BlacksunFilter for 3 or
+					DroneController for 0 or
+					MultiTracker for 5 or
+					ShieldGenerator for 20 or
+					TargetLock for 5 or
+					TargettingArray for 10),
+					[EjectionSystem for 15],
+					[FailsafeDetonator for 15],
+					[IridiumArmour for 20],
+					[StimulantInjector for 10],
+					[BondingKnife for 5],
+					[HardWiredBlacksunFilter for 3],
+					[HardWiredDroneController for 0],
+					[HardWiredMultiTracker for 5],
+					[HardWiredTargetLock for 5],
+					[GunDrone for 10],
+					[ShieldDrone for 15],
+					[MarkerDrone for 30]);
+			conditions (
+				/* EACH WEAPON OR SUPPORT SYSTEM MAY BE SELECTED ONLY ONCE */
+				((this->equipment intersect {BurstCannon})->size <= 1)&&
+				((this->equipment intersect {Flamer})->size <= 1)&&
+				((this->equipment intersect {FusionBlaster})->size <= 1)&&
+				((this->equipment intersect {MissilePod})->size <= 1)&&
+				((this->equipment intersect {PlasmaRifle})->size <= 1)&&
+				
+				((this->equipment intersect {AdvancedStabilizationSystem})->size <= 1)&&
+				((this->equipment intersect {ShieldGenerator})->size <= 1)&&
+				((this->equipment intersect {TargetLock})->size <= 1)&&
+				((this->equipment intersect {TargettingArray})->size <= 1)&&
+				((this->equipment intersect {BlacksunFilter})->size <= 1)&&
+				((this->equipment intersect {DroneController})->size <= 1)&&
+				((this->equipment intersect {MultiTracker})->size <= 1)&&
+												
+				((this->equipment intersect {AirburstingFragmentationProjector})->size <= 1)&&
+				((this->equipment intersect {CyclicIonBlaster})->size <= 1)&&
+				((this->equipment intersect {EjectionSystem})->size <= 1)&&
+				((this->equipment intersect {IridiumArmour})->size <= 1)&&
+				((this->equipment intersect {StimulantInjector})->size <= 1)&&
+				((this->equipment intersect {FailsafeDetonator})->size <= 1)&&
+				((this->equipment intersect {CommandAndControlNode})->size <= 1)&&
+				((this->equipment intersect {PositionalRelay})->size <= 1)&&
+				((this->equipment intersect {VectoredRetroThrusters})->size <= 1)&&
+				
+				((this->equipment intersect {TwinLinkedPlasmaRifle})->size <= 1)&&
+				((this->equipment intersect {TwinLinkedMissilePod})->size <= 1)&&
+				((this->equipment intersect {TwinLinkedBurstCannon})->size <= 1)&&
+				((this->equipment intersect {TwinLinkedFlamer})->size <= 1)&&
+				((this->equipment intersect {TwinLinkedFusionBlaster})->size <= 1)&&
+
+
+				/* NO MORE THAN 100 POINTS WORTH OF ITEMS MIGHT BE SELECTED FROM THE BATTLESUIT WARGEAR */
+
+				((((this->equipment contains {BondingKnife})?5:0)+
+				((this->equipment contains {EjectionSystem})?15:0)+
+				((this->equipment contains {FailsafeDetonator})?15:0)+
+				((this->equipment contains {GunDrone})?10:0)+
+				((this->equipment contains {IridiumArmour})?20:0)+
+				((this->equipment contains {HardWiredBlacksunFilter})?3:0)+
+				((this->equipment contains {HardWiredDroneController})?0:0)+
+				((this->equipment contains {HardWiredMultiTracker})?5:0)+
+				((this->equipment contains {HardWiredTargetLock})?5:0)+
+				((this->equipment contains {ShieldDrone})?15:0)+
+				((this->equipment contains {MarkerDrone})?30:0)+
+				((this->equipment contains {StimulantInjector})?10:0)) < 100)
+
+				&&
+				
+				/* IF DRONES ARE SELECTED THAN THERE MUST BE A DRONECONTROLLER */
+				
+					(((this->equipment intersect {GunDrone, ShieldDrone, MarkerDrone})->size > 0)?
+						((this->equipment intersect {DroneController, HardWiredDroneController})->size > 0):true) &&
+
+				/* IF A DRONE CONTROLLER IS SELECTED, SOME DRONES MUST BE TOO */
+
+				(((this->equipment intersect {DroneController, HardWiredDroneController})->size > 0)?
+					(((this->equipment intersect {GunDrone, ShieldDrone, MarkerDrone})->size >= 1)&&((this->equipment intersect {GunDrone, ShieldDrone, MarkerDrone})->size <= 2)):true)
+
+			);
+		}
+		member Shasel {
+			extends Shaso;
+		}
+		special {
+			unit XV8CrisisBattlesuitBodyguardTeam {
+				slots FREE;
+			}
+		}
+		
+		
+		
+		
+		
+		
+	}
+	
+	unit XV8CrisisBattlesuitBodyguardTeam {
+		composition(Shasvre for 35, [Shasvre for 35]);
+		member Shasvre {
+			extends Commander.Shaso;
+		}
+	}
+	
+	unit Ethereal {
+		composition Ethereal for 50;
+		member Ethereal {
+			equipment(SymbolsOfOffice or HonourBlade for 10);
+		}
+		
+		special {
+		
+			unit HonourGuardTeam {
+				composition (6 FireWarrior for 12 or (5 Firewarrior for 12, Shasui for 22), [6 FireWarrior for 12]);
+				linked ([Devilfish]);
+				slots FREE;
+				member FireWarrior {
+					extends FireWarriorTeam.FireWarrior;
+				}
+				
+				member Shasui {
+					extends FireWarriorTeam.Shasui;
+				}
+				
+				conditions (
+					(((this->linked select {this->type == Devilfish})->size > 0)?
+						((this->members->size + ((((this->members select (this->type == Shasui))->head->equipment) intersect {ShieldDrone,GunDrone,MarkerDrone})->size)) <= 12):true) &&
+
+					(((this->members select (this->equipment contains {PhotonGrenades}))->size > 0)?
+						((this->members select (this->equipment contains {PhotonGrenades}))->size == this->members->size):true) &&
+					(((this->members select (this->equipment contains {EMPGrenades}))->size > 0)?
+						((this->members select (this->equipment contains {EMPGrenades}))->size == this->members->size):true)
+				);
+
+				special {
+					unit Devilfish {
+						slots TRANSPORT;
+					}
+				}
+
+			}
+		
+		}
+	}
+	
+	unit XV8CrisisBattlesuitTeam {
+		slots * ELITE;
+		composition(Shasui for 25 or TeamLeader for 30 or Shasvre for 35, [2 Shasui for 25]);
+		member Shasui {
+			equipment(XV8CrisisBattlesuit,
+					(TwinLinkedBurstCannon for 12 or
+					TwinLinkedFlamer for 6 or
+					TwinLinkedFusionBlaster for 18 or
+					TwinLinkedMissilePod for 18 or
+					TwinLinkedPlasmaRifle for 18) or
+					(BurstCannon for 8 or
+					Flamer for 4 or
+					FusionBlaster for 12 or
+					MissilePod for 12 or
+					PlasmaRifle for 12 or
+					AdvancedStabilizationSystem for 10 or
+					BlacksunFilter for 3 or
+					DroneController for 0 or
+					MultiTracker for 5 or
+					ShieldGenerator for 20 or
+					TargetLock for 5 or
+					TargettingArray for 10,
+					BurstCannon for 8 or
+					Flamer for 4 or
+					FusionBlaster for 12 or
+					MissilePod for 12 or
+					PlasmaRifle for 12 or
+					AdvancedStabilizationSystem for 10 or
+					BlacksunFilter for 3 or
+					DroneController for 0 or
+					MultiTracker for 5 or
+					ShieldGenerator for 20 or
+					TargetLock for 5 or
+					TargettingArray for 10),
+					BurstCannon for 8 or
+					Flamer for 4 or
+					FusionBlaster for 12 or
+					MissilePod for 12 or
+					PlasmaRifle for 12 or
+					AdvancedStabilizationSystem for 10 or
+					BlacksunFilter for 3 or
+					DroneController for 0 or
+					MultiTracker for 5 or
+					ShieldGenerator for 20 or
+					TargetLock for 5 or
+					TargettingArray for 10,
+					[GunDrone for 10],
+					[ShieldDrone for 15],
+					[MarkerDrone for 30]);
+			conditions (
+				
+				((this->equipment intersect {BurstCannon})->size <= 1)&&
+				((this->equipment intersect {Flamer})->size <= 1)&&
+				((this->equipment intersect {FusionBlaster})->size <= 1)&&
+				((this->equipment intersect {MissilePod})->size <= 1)&&
+				((this->equipment intersect {PlasmaRifle})->size <= 1)&&
+				
+				((this->equipment intersect {AdvancedStabilizationSystem})->size <= 1)&&
+				((this->equipment intersect {ShieldGenerator})->size <= 1)&&
+				((this->equipment intersect {TargetLock})->size <= 1)&&
+				((this->equipment intersect {TargettingArray})->size <= 1)&&
+				((this->equipment intersect {BlacksunFilter})->size <= 1)&&
+				((this->equipment intersect {DroneController})->size <= 1)&&
+				((this->equipment intersect {MultiTracker})->size <= 1)&&
+				
+				((this->equipment intersect {TwinLinkedPlasmaRifle})->size <= 1)&&
+				((this->equipment intersect {TwinLinkedMissilePod})->size <= 1)&&
+				((this->equipment intersect {TwinLinkedBurstCannon})->size <= 1)&&
+				((this->equipment intersect {TwinLinkedFlamer})->size <= 1)&&
+				((this->equipment intersect {TwinLinkedFusionBlaster})->size <= 1)&&
+				
+				
+				
+					(((this->equipment intersect {GunDrone, ShieldDrone, MarkerDrone})->size > 0)?
+						((this->equipment intersect {DroneController, HardWiredDroneController})->size > 0):true) &&
+
+				
+
+				(((this->equipment intersect {DroneController, HardWiredDroneController})->size > 0)?
+					(((this->equipment intersect {GunDrone, ShieldDrone, MarkerDrone})->size >= 1)&&((this->equipment intersect {GunDrone, ShieldDrone, MarkerDrone})->size <= 2)):true)
+
+			);
+			
+		}
+		
+		member TeamLeader {
+			extends Shasui;
+			equipment (
+				[BondingKnife for 5],
+				[HardWiredBlacksunFilter for 3],
+				[HardWiredDroneController for 0],
+				[HardWiredMultiTracker for 5],
+				[HardWiredTargetLock for 5]
+			);
+		}
+		
+		member Shasvre {
+			extends XV8CrisisBattlesuitBodyguardTeam.Shasvre;
+		}
+	}
+	
+	unit StealthTeam {
+		slots * ELITE;
+		composition (3 Shasui for 30 or (2 Shasui for 30, TeamLeader for 35 or Shasvre for 40), [3 Shasui for 30]);
+		member Shasui {
+			equipment([BurstCannon or FusionBlaster for 2], StealthSuit,
+						[AdvancedStabilizationSystem for 10 or
+						BlacksunFilter for 3 or
+						DroneController for 0 or
+						MultiTracker for 5 or
+						ShieldGenerator for 20 or
+						TargetLock for 5 or
+						TargettingArray for 10],
+						[GunDrone for 10],
+						[ShieldDrone for 15],
+						[MarkerDrone for 30]
+						);
+						
+			conditions (
+				
+				
+				(((this->equipment intersect {GunDrone, ShieldDrone, MarkerDrone})->size > 0)?
+					((this->equipment intersect {DroneController, HardWiredDroneController})->size > 0):true) &&
+
+				
+
+				(((this->equipment intersect {DroneController, HardWiredDroneController})->size > 0)?
+					(((this->equipment intersect {GunDrone, ShieldDrone, MarkerDrone})->size >= 1)&&((this->equipment intersect {GunDrone, ShieldDrone, MarkerDrone})->size <= 2)):true)
+			);
+		}
+		
+		member TeamLeader {
+			extends Shasui;
+			equipment (
+				[BondingKnife for 5],
+				[HardWiredBlacksunFilter for 3],
+				[HardWiredDroneController for 0],
+				[HardWiredMultiTracker for 5],
+				[HardWiredTargetLock for 5],
+				[Markerlight for 10]
+			);
+		}
+		
+		member Shasvre {
+			extends TeamLeader;
+		}
+
+		conditions (
+		
+			/*IF A SUPPORT SYSTEM IS CHOSEN BY ANY MEMBER, EVERY OTHER 
+			  MEMBER MUST TAKE A SUPPORT SYSTEM AS WELL, BUT THEY ALL HAVE TO BE
+			  DIFFERENT FROM THE OTHER*/
+		
+			(((this->members select ((this->equipment intersect {AdvancedStabilizationSystem,BlacksunFilter,DroneController,MultiTracker,ShieldGenerator,TargetLock,TargettingArray})->size > 0))->size > 0)?
+				((this->members each ((this->equipment intersect 
+				{AdvancedStabilizationSystem,BlacksunFilter,DroneController,MultiTracker,ShieldGenerator,TargetLock,TargettingArray})->size > 0)) &&
+				((this->members select (this->equipment contains {AdvancedStabilizationSystem}))->size <= 1)&&
+				((this->members select (this->equipment contains {BlacksunFilter}))->size <= 1)&&
+				((this->members select (this->equipment contains {DroneController}))->size <= 1)&&
+				((this->members select (this->equipment contains {MultiTracker}))->size <= 1)&&
+				((this->members select (this->equipment contains {ShieldGenerator}))->size <= 1)&&
+				((this->members select (this->equipment contains {TargetLock}))->size <= 1)&&
+				((this->members select (this->equipment contains {TargettingArray}))->size <= 1)):true) &&
+				
+			
+			((this->members select (this->equipment contains {FusionBlaster}))->size <= (this->members->size/3))
+		);
+		
+	}
+	
+	
+	unit FireWarriorTeam {
+		composition (6 FireWarrior for 10 or (5 FireWarrior for 10, Shasui for 20), [6 FireWarrior for 10]);
+		linked ([Devilfish]);
+		slots * TROOP;
+		member FireWarrior {
+			equipment (PulseRifle or PulseCarabine, [PhotonGrenades for 1], [EMPGrenades for 3]);
+		}
+		
+		member Shasui {
+			extends FireWarrior;
+			equipment([GunDrone for 10],
+				[BondingKnife for 5],
+				[HardWiredBlacksunFilter for 3],
+				[HardWiredDroneController for 0],
+				[HardWiredMultiTracker for 5],
+				[HardWiredTargetLock for 5],
+				[ShieldDrone for 15],
+				[MarkerDrone for 30],
+				[Markerlight for 10]);
+				
+				
+			conditions (
+				
+				
+					(((this->equipment intersect {GunDrone, ShieldDrone, MarkerDrone})->size > 0)?
+						(this->equipment contains {HardWiredDroneController}):true) &&
+
+				
+
+				((this->equipment contains {HardWiredDroneController})?
+					(((this->equipment intersect {GunDrone, ShieldDrone, MarkerDrone})->size >= 1)&&((this->equipment intersect {GunDrone, ShieldDrone, MarkerDrone})->size <= 2)):true)
+			);
+		}
+		
+		
+		conditions (
+		
+			/*IF A DEVILFISH TRANSPORT IS INCLUDED, THE SQUAD SIZE MUST BE 12 OR LESS,
+				INCLUDING ANY DRONE SELECTED*/
+			(((this->linked select {this->type == Devilfish})->size > 0)?
+				((this->members->size + ((((this->members select (this->type == Shasui))->head->equipment) intersect {ShieldDrone,GunDrone,MarkerDrone})->size)) <= 12):true) &&
+			
+			/* IF GRENADES ARE SELECTED, EVERY MEMBER MUST HAVE THEM */
+			(((this->members select (this->equipment contains {PhotonGrenades}))->size > 0)?
+				((this->members select (this->equipment contains {PhotonGrenades}))->size == this->members->size):true) &&
+			(((this->members select (this->equipment contains {EMPGrenades}))->size > 0)?
+				((this->members select (this->equipment contains {EMPGrenades}))->size == this->members->size):true)
+		);
+		
+		special {
+			unit Devilfish {
+				slots TRANSPORT;
+			}
+		}
+		
+	}
+	
+	
+	unit Devilfish {
+		cost 80;
+		composition Devilfish;
+		member Devilfish {
+			equipment (BurstCannon,
+						2 GunDrones or SmartMissileSystem for 20,
+						LandingGear,
+						[SensorSpines for 10],
+						[TargettingArray for 5],
+						[BlacksunFilter for 5],
+						[MultiTracker for 10],
+						[FlechetteDischarger for 10],
+						[DecoyLaunchers for 5],
+						[DisruptionPod for 5],
+						[2 SeekerMissile for 10],
+						[TargetLock for 5]);
+		}
+	
+	}
+	
+	
+	unit KrootCarnivoreSquad {
+		slots * TROOP;
+		composition (((10 Kroot for 7,[10 Kroot for 7]) or (1 Shaper for 28, 9 Kroot for 7, [10 Kroot for 7])), [12 KrootHound for 6], [3 KrootoxRider for 35]);
+		member Kroot {
+			equipment(KrootRifle, [Armour for 1]);
+		}
+		member KrootoxRider {
+			equipment(KrootGun);
+		}
+		member KrootHound {
+			equipment(Fangs);
+		}
+		member Shaper {
+			equipment (KrootRifle or PulseCarabine for 5 or PulseRifle for 5, [Armour for 1]);
+		}
+		
+		conditions (
+			/* IF A SHAPER IS INCLUDED AND THE ARMOUR OPTION IS SELECTED,
+				EVERY MEMBER MUST TAKE IT */
+			
+			(this->members select (
+				this->type == KrootCarnivoreSquad.Shaper
+			))->size == 0 ?
+			
+				(this->members select (
+					this->equipment contains {Armour}
+				))->size == 0
+			
+			: 
+			
+				(this->members select (
+					this->equipment contains {Armour}
+			  	))->size == 0 ?
+				true :
+				(this->members select (
+					this->equipment contains {Armour}
+				))->size == this->members->size
+
+		);
+	}
+	
+	
+	unit GunDroneSquadron {
+		composition (4 GunDrone for 12, [4 GunDrone for 12]);
+		slots * FAST;
+		member GunDrone {
+			equipment (TwinLinkedPulseCarabine);
+		}
+	}
+	
+	unit PathfinderTeam {
+		composition (3 Shasla for 12, (1 Shasla for 12 or Shasui for 22), [4 Shasla for 12]);
+		linked (Devilfish);
+		slots * FAST;
+		member Shasla {
+			equipment((PulseCarabine, Markerlight) or (RailRifle for 10, TargetLock), [PhotonGrenades for 1], [EMPGrenades for 3]);
+		}
+		
+		member Shasui {
+			extends Shasla;
+			equipment(PulseCarabine, Markerlight, [PhotonGrenades for 1], [EMPGrenades for 3],
+						[GunDrone for 10],
+						[BondingKnife for 5],
+						[HardWiredBlacksunFilter for 3],
+						[HardWiredDroneController for 0],
+						[HardWiredMultiTracker for 5],
+						[HardWiredTargetLock for 5],
+						[ShieldDrone for 15],
+						[MarkerDrone for 30]);
+		}
+		
+		conditions (
+			/* GRENADES MUST BE TAKEN BY EVERY MEMBER */
+			(this->members select (
+				this->equipment contains {PhotonGrenades}
+			))->size > 0 ?
+			(this->members select (
+				this->equipment contains {PhotonGrenades}
+			))->size == this->members->size
+			:true
+		&&
+			(this->members select (
+				this->equipment contains {EMPGrenades}
+			))->size > 0 ?
+			(this->members select (
+				this->equipment contains {EMPGrenades}
+			))->size == this->members->size
+			:true		
+		);
+		
+		special {
+			unit Devilfish {
+				slots TRANSPORT;
+			}
+		}
+	}
+	
+	unit PiranhaLightSkimmerTeam {
+		composition (Piranha for 60, [4 Piranha for 60]);
+		slots * FAST;
+		member Piranha {
+			equipment(BurstCannon or FusionBlaster for 5, 2 GunDrone,
+						[SensorSpines for 10],
+						[TargettingArray for 5],
+						[BlacksunFilter for 5],
+						[FlechetteDischarger for 10],
+						[DecoyLaunchers for 5],
+						[DisruptionPod for 5],
+						[2 SeekerMissile for 10],
+						[TargetLock for 5]);
+		}
+	}
+	
+	unit VespidStingwings {
+		composition (StrainLeader for 22, 3 Stingwing for 16, [7 Stingwing for 16]);
+		slots * FAST;
+		member Stingwing {
+			equipment(NeutronBlaster);
+		}
+		member StrainLeader {
+			extends Stingwing;
+		}
+	}
+	
+	unit XV88BroadsideBattlesuitTeam {
+		composition (1 Shasui for 70 or TeamLeader for 75 or Shasvre for 80, [2 Shasui for 70]);
+		slots * HEAVY;
+		member Shasui {
+			equipment (XV88BroadsideBattlesuit, TwinLinkedRailGun, SmartMissileSystem or TwinLinkedPlasmaRifle for 10);
+		}
+		member TeamLeader {
+			extends Shasui;
+			equipment (
+				[BondingKnife for 5],
+				[HardWiredBlacksunFilter for 3],
+				[HardWiredDroneController for 0],
+				[HardWiredMultiTracker for 5],
+				[HardWiredTargetLock for 5],
+				[GunDrone for 10],
+				[ShieldDrone for 15],
+				[MarkerDrone for 30]);
+			conditions (
+			
+				(this->equipment intersect {
+					GunDrone,
+					ShieldDrone,
+					MarkerDrone
+				})->size > 0 ?
+				this->equipment contains {HardWiredDroneController}
+				:true
+				
+			&&
+			
+				this->equipment contains
+					{HardWiredDroneController} ?
+				(this->equipment intersect {
+					GunDrone,
+					ShieldDrone,
+					MarkerDrone
+				})->size >= 1 &&
+				(this->equipment intersect {
+					GunDrone,
+					ShieldDrone,
+					MarkerDrone
+				})->size <= 2
+				:true
+			);
+		}
+		member Shasvre {
+			extends TeamLeader;
+		}
+	}
+	
+	unit SniperDronesTeam {
+		slots HEAVY;
+		composition (Spotter for 80, 3 SniperDrone, [Spotter for 80, 3 SniperDrone], [Spotter for 80, 3 SniperDrone]);
+		member Spotter {
+			equipment (PulsePistol, DroneController, NetworkedMarkerlight);
+		}
+		member SniperDrone {
+			equipment (RailRifle, TargetLock);
+		}
+	}
+	
+	unit HammerheadGunship {
+		slots * HEAVY;
+		composition Hammerhead for 90;
+		member Hammerhead {
+			equipment (IonCannon for 15 or RailGun for 50,
+						2 BurstCannon for 5 or 2 GunDrones for 10 or SmartMissileSystem for 20,
+						[SensorSpines for 10],
+						[TargettingArray for 5],
+						[BlacksunFilter for 5],
+						[MultiTracker for 10],
+						[FlechetteDischarger for 10],
+						[DecoyLaunchers for 5],
+						[DisruptionPod for 5],
+						[2 SeekerMissile for 10],
+						[TargetLock for 5]);
+		}
+	}
+	
+	unit SkyrayMissileDefenceGunship {
+		slots * HEAVY;
+		composition Skyray;
+		member Skyray {
+			equipment (LandingGear,
+					6 SeekerMissile,
+					2 NetworkedMarkerlight,
+					TargetLock,
+					2 BurstCannon for 5 or
+					2 GunDrones for 10 or
+					SmartMissileSystem for 20,
+					[SensorSpines for 10],
+					[TargettingArray for 5],
+					[BlacksunFilter for 5],
+					[MultiTracker for 10],
+					[FlechetteDischarger for 10],
+					[DecoyLaunchers for 5],
+					[DisruptionPod for 5]);
+		}
+	}
+	
+	unit Aunva {
+		cost 205;
+		slots HQ;
+		composition (Aunva, 2 HonourGuard);
+		member Aunva {
+			equipment (ParadoxOfDuality);
+		}
+		member HonourGuard {
+			equipment (HonourBlade);
+		}
+	}
+	
+	unit CommanderFarsight {
+		cost 170;
+		slots HQ;
+		composition (Farsight);
+		member Farsight {
+			
+		}
+	}
+	
+	unit CommanderShadowsun {
+		cost 175;
+		slots HQ;
+		composition (Shadowsun);
+		member Shadowsun {
+			
+		}
+	}
+	
+	conditions (
+		
+		
+		(this->units select (
+			(this->members select (
+				this->equipment contains {AirburstingFragmentationProjector}
+			))->size > 0
+		))->size <= 1
+	&&
+		((this->units select ((this->members select (this->equipment contains {CyclicIonBlaster}))->size > 0))->size <= 1) &&
+		((this->units select ((this->members select (this->equipment contains {CommandAndControlNode}))->size > 0))->size <= 1) &&
+		((this->units select ((this->members select (this->equipment contains {PositionalRelay}))->size > 0))->size <= 1) &&
+		((this->units select ((this->members select (this->equipment contains {VectoredRetroThrusters}))->size > 0))->size <= 1) &&
+		((this->units select ((this->members select (this->equipment contains {EjectionSystem}))->size > 0))->size <= 1) &&
+		((this->units select ((this->members select (this->equipment contains {FailsafeDetonator}))->size > 0))->size <= 1) &&
+		((this->units select ((this->members select (this->equipment contains {IridiumArmour}))->size > 0))->size <= 1) &&
+		((this->units select ((this->members select (this->equipment contains {StimulantInjector}))->size > 0))->size <= 1)
+		
+		
+	);
+	
+}

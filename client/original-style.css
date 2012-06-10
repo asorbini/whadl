@@ -7,8 +7,7 @@ body, html {
 	height: 100%;
 	width: 100%;
 	/*background: #EFF8FF;*/
-	/* background: #C3D3DF; */
-	background: #fff;
+	background: #C3D3DF;
 }
 
 body {
@@ -17,8 +16,8 @@ body {
 }
 
 body > div.title {
-	margin: 5px auto 10px;
-	padding: 10px 10px 10px 10px;
+	margin: 10px auto 20px;
+	padding: 20px 20px 20px 20px;
 	display:block;
 	border: 1px solid #C3D3DF;
 	border-color: #9BB9CF;
@@ -63,7 +62,7 @@ body > div.title > div.loading {
 body > div.title > div.copyr {
 	text-align: right;
 	padding: 5px 5px;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	margin-right: 0px;
 	float: right;
 	margin-top: 25px;
@@ -98,15 +97,14 @@ input.submit {
 }
 
 body > div.content {
-	width: 90%;
-	/* height: 109%; */
+	width: 80%;
+	height: 109%;
 	padding: 0;
 	margin: auto;
-	/* border: 1px solid #C3D3DF;
-	border-color: #9BB9CF; */
+	border: 1px solid #C3D3DF;
+	border-color: #9BB9CF;
 	overflow: auto;
-	/* background: white; */
-	background: none;
+	background: white;
 }
 
 #builds-navigator {
@@ -118,7 +116,7 @@ body > div.content {
 
 #builds {
 	margin-left: 150px;
-	/* height: 100%; */
+	height: 100%;
 	border-left: 1px solid #C3D3DF;
 	overflow: auto;
 }
@@ -126,8 +124,7 @@ body > div.content {
 
 div.dialog {
 	padding: 0;
-	margin: 10px auto 10px;
-	box-shadow: 0px 5px 5px #ddd;
+	margin: 20px auto 20px;
 }
 
 div.dialog > div.title {
@@ -135,14 +132,8 @@ div.dialog > div.title {
 	background: #D1E2EF;
 }
 
-div.unit-selector {
+div.unit-select {
 	
-}
-
-div.unit-selector > div.content {
-	border-left: 1px solid #C3D3DF;
-	border-right: 1px solid #C3D3DF;
-	border-bottom: 1px solid #C3D3DF;
 }
 
 div.units > div.title {
@@ -152,7 +143,6 @@ div.units > div.title {
 
 div.units {
 	background: white;
-	box-shadow: 0px 5px 5px #ddd;
 }
 
 div.dialog > div.title > h2,
@@ -160,19 +150,19 @@ div.dialog > div.title > h3,
 div.units > div.title > h3 {
 	font-size: 13px;
 	text-transform: uppercase;
-	padding: 5px 5px 1px;
+	padding: 5px 10px 1px;
 }
 
 div.dialog > div.content {
-	/* border: 1px solid #C3D3DF; */
+	border: 1px solid #C3D3DF;
 	border-top: 0;
-	/* padding: 5px; */
+	padding: 5px;
 	background: #EFF8FF;
 	background: white;
 }
 
 div.dialog > div.content > ul.menu {
-	/* border: 1px solid #C3D3DF; */
+	border: 1px solid #C3D3DF;
 	padding: 3px 3px 0;
 /*	background: #EFF8FF;
 	background: #EFF9FF;*/
@@ -218,11 +208,6 @@ div.dialog > div.content ul.menu > li > span.value > form > input.submit {
 	top: 0;
 	width: 100%;
 	margin: 0;
-	box-shadow: 0px 5px 5px #ddd;
-}
-
-#main-menu ul.menu {
-	border-bottom: 1px solid #C3D3DF;
 }
 
 #main-menu > div.title > h3 {
@@ -246,39 +231,34 @@ div.clearer {
 }
 
 div.edit-build > div.content > div.edit-unit {
-	margin: 10px;
+	margin: 20px;
 	border-bottom: 0;
 	background: #fff;
 }
 
 div.edit-unit > div.content,
 div.edit-build > div.content {
-	/* border: 1px solid #C3D3DF;
-	border-style: none solid solid; */
-	/* padding: 5px 0; */
-	padding: 0;
+	border: 1px solid #C3D3DF;
+	border-style: none solid solid;
+	padding: 5px 0;
 }
 
 div.edit-build > div.content {
 	padding-top: 25px;
 	/*min-height: 370px;*/
 	padding-bottom: 0px;
-	border-left: 0;
-	border-right: 0;
-	/* background: #eee; */
+	background: #eee;
 }
 
 
 div.edit-build {
 	padding: 0;
-	margin: 5px 5px 0;
+	margin: 20px 20px 0;
 }
 
 div.edit-unit {
 	padding: 0;
-	/* margin: 0px 5px 5px; */
-	margin: 0;
-	padding: 0px;
+	margin: 0px 20px 20px;
 }
 
 div.edit-build > div.title {
@@ -300,35 +280,32 @@ div.edit-unit > div.content {
 div.edit-build > div.content > div.units > div.content {
 	border: 1px solid #C3D3DF;
 	border-top: 0;
-	/* padding: 5px 0 0px; */
-	padding: 0px;
-	background: #eee;
+	padding: 20px 0 0px;
 }
 
 div.edit-build > div.content > div.units > div.content > span.no-units{
 	display: block;
-	padding: 10px 5px 6px;
+	padding: 0px 5px 20px;
 	text-transform: uppercase;
 	font-size: 12px;
 	text-align: center;
 }
 
 div.edit-unit > div.content > div.pattern-editor {
-	margin: 5px 10px 5px;
+	margin: 10px 20px 10px;
 }
 
 div.edit-build > div.content > div{
-	margin: 0 10px;
+	margin: 0 20px;
 }
 
 div.edit-unit > div.content > div.dialog,
 div.edit-build > div.content > div.dialog {
-	margin: 10px 10px;
+	margin: 20px 20px;
 }
 
 div.edit-unit > div.content {
-	padding-top: 10px;
-	background: #eee;
+	padding-top: 20px;
 }
 
 div.edit-unit > div.title {
@@ -354,10 +331,9 @@ div.export div.result > div.title {
 div.edit-build > div.title >  h2,
 div.edit-unit > div.title > h3,
 div.edit-member > div.title > h4 {
-	/* font-style: italic; */
-	font-weight: bold;
+	font-style: italic;
+	font-weight: normal;
 	padding-left: 10px;
-	padding-top: 5px;
 }
 
 
@@ -390,15 +366,15 @@ div.upgrades > div.title > h3 {
 }
 
 h2 {
-	font-size: 20px;
+	font-size: 25px;
 }
 
 h3 {
-	font-size: 15px;
+	font-size: 20px;
 }
 
 h4 {
-	font-size: 13px;
+	font-size: 18px;
 }
 
 
@@ -419,17 +395,13 @@ h2 {
 
 ul.base-info {
 	display: block;
-	/* border: 1px solid #C3D3DF;
+	border: 1px solid #C3D3DF;
 	padding: 2px 2px 0;
-	padding-bottom: 0; */
-	padding: 0;
-	margin: 0 20% 10px;
-	min-width: 400px;
-	background: none;
-	/* background: #EFF8FF;
+	padding-bottom: 0;
+	margin: 0 20px 20px;
+	background: #EFF8FF;
 	background: #D1E2EF;
-	border-color: #9BB9CF; */
-	box-shadow: 0px 5px 5px #ddd;
+	border-color: #9BB9CF;
 }
 
 ul.base-info > li {
@@ -635,7 +607,6 @@ div.pattern-editor {
 	padding: 5px;
 	background: white;
 	margin: 5px 0 0;
-	border-bottom: 1px solid #C3D3DF;
 }
 
 div.pattern-editor > div.summary {
@@ -697,19 +668,20 @@ div.choices-box > div.select > select {
 div.composition,
 div.linked,
 div.upgrades {
-	margin: 10px;
+	margin: 20px;
 }
 
 
 div.composition > div.members,
 div.linked > div.content,
 div.upgrades > div.content {
-	padding: 5px;
-	border-bottom: 1px solid #C3D3DF;
+	padding: 15px;
+	border: 1px solid #C3D3DF;
+	border-top: 0;
 	background: #E0E9EF;
+	background: white;
 	background: #eee;
-	/* background: white; */
-	/* max-height: 500px; */
+	max-height: 500px;
 	overflow: auto;
 }
 
@@ -719,7 +691,7 @@ div.linked > div.content > div.choices-box {
 	padding: 15px;
 	border: 1px solid #C3D3DF;
 	text-transform: none;
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
 div.linked > div.content > div.choices-box > div.select > div {
@@ -731,13 +703,13 @@ div.linked > div.content > div.choices-box > div.select > div {
 
 div.edit-member {
 	border: 1px solid #C3D3DF;
-	padding: 5px 5px;
-	margin: 5px 0px 5px;
+	padding: 10px 10px;
+	margin: 10px 0px 10px;
 	background: #fff;
 }
 
 div.edit-member > div.content {
-	padding: 10px 5px 5px;
+	padding: 20px 10px 10px;
 	border: 1px solid #9BB9CF;
 	border-top: 0;
 	border: 0;
@@ -755,7 +727,6 @@ div.export {
 	/*height: 79%;*/
 	margin: auto;
 	margin-bottom: 0;
-	box-shadow: 0px 5px 5px #ddd;
 }
 
 div.export > div.content {
@@ -767,7 +738,7 @@ div.export > div.content > div.review,
 div.export > div.content > div.result {
 	/*	padding: 0;
 		margin: 0;*/
-		margin: 10px;
+		margin: 20px;
 }
 
 div.export > div.content > div.review > div.content,
@@ -799,7 +770,7 @@ div.export > div.content > ul.menu > li > span.value {
 
 div.export pre {
 	border: 1px solid #C3D3DF;
-	padding: 10px;
+	padding: 20px;
 	/*width: 685px;*/
 	display: block;
 	height: 400px;
@@ -819,7 +790,7 @@ div.export pre textarea {
 }
 
 div.result {
-	margin-top: 10px;
+	margin-top: 20px;
 	/*	padding: 0;
 		margin: 0;*/
 }
@@ -833,7 +804,7 @@ div.result > div.title  {
 }
 
 div.result > div.content {
-	padding: 10px 10px 0px;
+	padding: 20px 20px 0px;
 	font-size: 12px;
 	border: 1px solid #C3D3DF;
 	border-top: 0;
@@ -846,7 +817,7 @@ div.result > div.content > p,
 div.result > div.content > div.loading {
 	border: 1px solid #C3D3DF;
 	padding: 5px;
-	margin: 0 0 10px;
+	margin: 0 0 20px;
 	/*	padding: 0;
 		margin: 0;*/
 }
@@ -873,7 +844,7 @@ div.result > div.content > p > span.label {
 }
 
 div.result > div.content > p > span.value {
-	padding: 5px 5px;
+	padding: 5px 10px;
 	/*	padding: 0;
 		margin: 0;*/
 }
@@ -907,7 +878,7 @@ div.result > div.content > p.message > span.label {
 
 div.result > div.content > p.message > span.success {
 	border: 1px solid #C3D3DF;
-	padding: 5px;
+	padding: 10px;
 	text-align: center;
 	font-weight: bold;
 	margin-top: 5px;
@@ -919,7 +890,7 @@ div.result > div.content > p.message > span.success {
 div.result > div.content > p.message > span.error {
 	color: #DF0000;
 	border: 1px solid #C3D3DF;
-	padding: 5px;
+	padding: 10px;
 	margin-top: 5px;
 	background: #EFF8FF;
 	/*	padding: 0;
