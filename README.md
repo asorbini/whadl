@@ -1,4 +1,4 @@
 whadl
 =====
 
-Warhammer Army Definition Language, Parser and REST WebService
+Wargame Army Definition Language, Parser and REST WebService
