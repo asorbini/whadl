@@ -1,4 +1,10 @@
-body, html {
+/* This work is licensed under the Creative Commons Attribution-ShareAlike 
+	3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ 
+	or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain 
+	View, California, 94041, USA. */
+	
+	
+body,html {
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -15,13 +21,13 @@ body {
 	height: 80%;
 }
 
-body > div.title {
+body>div.title {
 	margin: 10px auto 20px;
 	padding: 20px 20px 20px 20px;
-	display:block;
+	display: block;
 	border: 1px solid #C3D3DF;
 	border-color: #9BB9CF;
-    -moz-border-radius: 4px;
+	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	width: 778px;
 	background: #7DB8DF;
@@ -36,20 +42,19 @@ a {
 
 h1 {
 	margin: 0;
-
 	text-align: left;
 	font-size: 40px;
 }
 
-body > div.title > form.ctrl {
+body>div.title>form.ctrl {
 	margin: 0;
 	margin-top: 25px;
 	margin-right: 4px;
 	padding: 0;
-	display:none;
+	display: none;
 }
 
-body > div.title > div.loading {
+body>div.title>div.loading {
 	clear: both;
 	text-align: left;
 	padding: 5px 15px;
@@ -59,20 +64,19 @@ body > div.title > div.loading {
 	font-size: 12px;
 }
 
-body > div.title > div.copyr {
+body>div.title>div.copyr {
 	text-align: right;
 	padding: 5px 5px;
 	margin-bottom: 10px;
 	margin-right: 0px;
 	float: right;
 	margin-top: 25px;
-/*	border: 1px solid #9BB9CF;
+	/*	border: 1px solid #9BB9CF;
 	background: #EFF8FF;*/
 	font-size: 12px;
 }
 
-
-body > div.title > form.ctrl > input.submit {
+body>div.title>form.ctrl>input.submit {
 	border-color: #C3D3DF;
 }
 
@@ -82,10 +86,9 @@ ul {
 	padding: 0;
 }
 
-
 select {
 	border: 1px solid #9BB9CF;
-	background: #F6FFEF ;
+	background: #F6FFEF;
 	background: #EFF8FF;
 	background: white;
 }
@@ -96,7 +99,7 @@ input.submit {
 	background: #EFF8FF;
 }
 
-body > div.content {
+body>div.content {
 	width: 80%;
 	height: 109%;
 	padding: 0;
@@ -121,13 +124,12 @@ body > div.content {
 	overflow: auto;
 }
 
-
 div.dialog {
 	padding: 0;
 	margin: 20px auto 20px;
 }
 
-div.dialog > div.title {
+div.dialog>div.title {
 	border: 1px solid #9BB9CF;
 	background: #D1E2EF;
 }
@@ -136,7 +138,7 @@ div.unit-select {
 	
 }
 
-div.units > div.title {
+div.units>div.title {
 	border: 1px solid #9BB9CF;
 	background: #D1E2EF;
 }
@@ -145,15 +147,13 @@ div.units {
 	background: white;
 }
 
-div.dialog > div.title > h2,
-div.dialog > div.title > h3,
-div.units > div.title > h3 {
+div.dialog>div.title>h2,div.dialog>div.title>h3,div.units>div.title>h3 {
 	font-size: 13px;
 	text-transform: uppercase;
 	padding: 5px 10px 1px;
 }
 
-div.dialog > div.content {
+div.dialog>div.content {
 	border: 1px solid #C3D3DF;
 	border-top: 0;
 	padding: 5px;
@@ -161,21 +161,21 @@ div.dialog > div.content {
 	background: white;
 }
 
-div.dialog > div.content > ul.menu {
+div.dialog>div.content>ul.menu {
 	border: 1px solid #C3D3DF;
 	padding: 3px 3px 0;
-/*	background: #EFF8FF;
+	/*	background: #EFF8FF;
 	background: #EFF9FF;*/
 }
 
-div.dialog > div.content > ul.menu > li {
+div.dialog>div.content>ul.menu>li {
 	padding: 7px;
 	margin-bottom: 3px;
 	background: white;
-/*	border: 1px #C3D3DF solid;*/
+	/*	border: 1px #C3D3DF solid;*/
 }
 
-div.dialog > div.content > ul.menu > li > span.label {
+div.dialog>div.content>ul.menu>li>span.label {
 	font-size: 11px;
 	display: block;
 	padding: 2px 5px 5px;
@@ -186,12 +186,12 @@ div.dialog > div.content > ul.menu > li > span.label {
 	font-weight: bold;
 }
 
-div.dialog > div.content ul.menu > li > span.value > form {
+div.dialog>div.content ul.menu>li>span.value>form {
 	display: block;
 	text-align: center;
 }
 
-div.dialog > div.content ul.menu > li > span.value > form > select {
+div.dialog>div.content ul.menu>li>span.value>form>select {
 	width: 300px;
 	/*float: left;*/
 	display: inline;
@@ -199,7 +199,7 @@ div.dialog > div.content ul.menu > li > span.value > form > select {
 	border: 1px #C3D3DF solid;
 }
 
-div.dialog > div.content ul.menu > li > span.value > form > input.submit {
+div.dialog>div.content ul.menu>li>span.value>form>input.submit {
 	border: 1px #C3D3DF solid;
 }
 
@@ -210,14 +210,12 @@ div.dialog > div.content ul.menu > li > span.value > form > input.submit {
 	margin: 0;
 }
 
-#main-menu > div.title > h3 {
+#main-menu>div.title>h3 {
 	font-size: 15px;
 	padding: 5px 5px 0;
 }
 
-h2 input,
-h3 input,
-h4 input {
+h2 input,h3 input,h4 input {
 	border: 0;
 	font-size: 15px;
 	background: none;
@@ -230,26 +228,24 @@ div.clearer {
 	clear: both;
 }
 
-div.edit-build > div.content > div.edit-unit {
+div.edit-build>div.content>div.edit-unit {
 	margin: 20px;
 	border-bottom: 0;
 	background: #fff;
 }
 
-div.edit-unit > div.content,
-div.edit-build > div.content {
+div.edit-unit>div.content,div.edit-build>div.content {
 	border: 1px solid #C3D3DF;
 	border-style: none solid solid;
 	padding: 5px 0;
 }
 
-div.edit-build > div.content {
+div.edit-build>div.content {
 	padding-top: 25px;
 	/*min-height: 370px;*/
 	padding-bottom: 0px;
 	background: #eee;
 }
-
 
 div.edit-build {
 	padding: 0;
@@ -261,29 +257,29 @@ div.edit-unit {
 	margin: 0px 20px 20px;
 }
 
-div.edit-build > div.title {
-	/*width: 880px;*/
+div.edit-build>div.title { /*width: 880px;*/
+	
 }
 
-div.edit-build > div.content {
-	/*width: 878px;*/
+div.edit-build>div.content { /*width: 878px;*/
+	
 }
 
-div.edit-unit > div.content {
-	/*width: 833px;*/
+div.edit-unit>div.content { /*width: 833px;*/
+	
 }
 
-div.edit-unit > div.content {
-	/*width: 804px;*/
+div.edit-unit>div.content { /*width: 804px;*/
+	
 }
 
-div.edit-build > div.content > div.units > div.content {
+div.edit-build>div.content>div.units>div.content {
 	border: 1px solid #C3D3DF;
 	border-top: 0;
 	padding: 20px 0 0px;
 }
 
-div.edit-build > div.content > div.units > div.content > span.no-units{
+div.edit-build>div.content>div.units>div.content>span.no-units {
 	display: block;
 	padding: 0px 5px 20px;
 	text-transform: uppercase;
@@ -291,77 +287,65 @@ div.edit-build > div.content > div.units > div.content > span.no-units{
 	text-align: center;
 }
 
-div.edit-unit > div.content > div.pattern-editor {
+div.edit-unit>div.content>div.pattern-editor {
 	margin: 10px 20px 10px;
 }
 
-div.edit-build > div.content > div{
+div.edit-build>div.content>div {
 	margin: 0 20px;
 }
 
-div.edit-unit > div.content > div.dialog,
-div.edit-build > div.content > div.dialog {
+div.edit-unit>div.content>div.dialog,div.edit-build>div.content>div.dialog
+	{
 	margin: 20px 20px;
 }
 
-div.edit-unit > div.content {
+div.edit-unit>div.content {
 	padding-top: 20px;
 }
 
-div.edit-unit > div.title {
+div.edit-unit>div.title {
 	background: white;
 }
 
-
-div.edit-member > div.title {
+div.edit-member>div.title {
 	border-bottom: 1px solid #9BB9CF;
 }
 
-div.edit-build > div.title,
-div.edit-unit > div.title,
-div.composition > div.title,
-div.linked > div.title,
-div.upgrades > div.title,
-div.export div.review > div.title,
-div.export div.result > div.title {
+div.edit-build>div.title,div.edit-unit>div.title,div.composition>div.title,div.linked>div.title,div.upgrades>div.title,div.export div.review>div.title,div.export div.result>div.title
+	{
 	border-bottom: 1px solid #C3D3DF;
 }
 
-
-div.edit-build > div.title >  h2,
-div.edit-unit > div.title > h3,
-div.edit-member > div.title > h4 {
+div.edit-build>div.title>h2,div.edit-unit>div.title>h3,div.edit-member>div.title>h4
+	{
 	font-style: italic;
 	font-weight: normal;
 	padding-left: 10px;
 }
 
-
-div.edit-build > div.title {
+div.edit-build>div.title {
 	padding: 6px 0 2px;
 }
 
-div.edit-build > div.title > form.ctrl {
-
+div.edit-build>div.title>form.ctrl {
+	
 }
 
-div.edit-unit > div.title {
+div.edit-unit>div.title {
 	padding: 0 0 3px;
 }
 
-div.edit-member > div.title {
+div.edit-member>div.title {
 	padding: 0 0 3px;
 }
 
-div.composition > div.title,
-div.linked > div.title,
-div.upgrades > div.title {
+div.composition>div.title,div.linked>div.title,div.upgrades>div.title {
 	padding: 0 0 3px;
 }
 
-div.composition > div.title > h3,
-div.linked > div.title > h3,
-div.upgrades > div.title > h3 {
+div.composition>div.title>h3,div.linked>div.title>h3,div.upgrades>div.title>h3
+	{
 	font-size: 18px;
 }
 
@@ -377,8 +361,7 @@ h4 {
 	font-size: 18px;
 }
 
-
-h2, h3, h4 {
+h2,h3,h4 {
 	margin: 2px;
 	display: block;
 	float: left;
@@ -404,12 +387,12 @@ ul.base-info {
 	border-color: #9BB9CF;
 }
 
-ul.base-info > li {
-	display:block;
+ul.base-info>li {
+	display: block;
 	margin: 0 0 2px;
 }
 
-ul.base-info > li > span.label {
+ul.base-info>li>span.label {
 	display: block;
 	float: left;
 	width: 200px;
@@ -424,7 +407,7 @@ ul.base-info > li > span.label {
 	border-color: #9BB9CF;
 }
 
-ul.base-info > li > span.value {
+ul.base-info>li>span.value {
 	display: block;
 	margin-left: 212px;
 	border: 1px solid #C3D3DF;
@@ -433,7 +416,6 @@ ul.base-info > li > span.value {
 	padding: 5px 5px 3px;
 	background: white;
 	border-color: #9BB9CF;
-
 }
 
 .editable:hover {
@@ -445,94 +427,90 @@ div.pattern {
 	margin: 3px 0;
 }
 
-div.pattern > ul.quantity-selection {
-	font-size:13px;
+div.pattern>ul.quantity-selection {
+	font-size: 13px;
 }
 
-div.pattern ul.quantity-selection > li {
+div.pattern ul.quantity-selection>li {
 	border: 1px solid #C3D3DF;
 	padding: 1px;
 	background: white;
 }
 
-div.pattern > ul.quantity-selection > li.selected-quantity {
-	padding:5px 5px 3px;
+div.pattern>ul.quantity-selection>li.selected-quantity {
+	padding: 5px 5px 3px;
 	width: 55px;
-	float:left;
+	float: left;
 }
 
-div.pattern > ul.quantity-selection > li.cost {
-	margin-left:70px;
-	padding:5px 5px 3px;
+div.pattern>ul.quantity-selection>li.cost {
+	margin-left: 70px;
+	padding: 5px 5px 3px;
 	background: #F1FFCF;
 	background: #EFF8FF;
 }
 
-div.pattern > ul.quantity-selection > li.selected-quantity > select {
+div.pattern>ul.quantity-selection>li.selected-quantity>select {
 	border: 1px solid #C3D3DF;
 	width: 45px;
 	font-size: 10px;
 	margin: 0;
 }
 
-div.pattern > ul.quantity-selection > li.edited {
+div.pattern>ul.quantity-selection>li.edited {
 	padding: 3px 5px 2px;
 }
 
-
 div.simple-pattern {
-	border:1px solid #C3D3DF;
-	padding:3px;
-/*	width:444px;*/
+	border: 1px solid #C3D3DF;
+	padding: 3px;
+	/*	width:444px;*/
 	background: #EFF8FF;
 	background: #D1E2EF;
-	
 }
 
-div.simple-pattern > span.name {
-	border:1px solid #C3D3DF;
-	display:block;
-	float:left;
-	font-size:12px;
-	padding:5px 5px 3px;
-/*	width:321px;*/
+div.simple-pattern>span.name {
+	border: 1px solid #C3D3DF;
+	display: block;
+	float: left;
+	font-size: 12px;
+	padding: 5px 5px 3px;
+	/*	width:321px;*/
 	width: 260px;
 	background: white;
 }
 
-div.simple-pattern > ul.quantity-selection {
-	/*margin-left:336px;*/
+div.simple-pattern>ul.quantity-selection { /*margin-left:336px;*/
 	margin-left: 275px;
 	font-size: 12px;
 }
 
 div.opt-pattern {
-	border:1px solid #C3D3DF;
+	border: 1px solid #C3D3DF;
 	padding: 5px;
 }
 
-div.opt-pattern > div.check {
-	float:left;
-	margin:7px 0 0 7px;
-	padding:1px 2px 2px 0;
-	width:20px;
+div.opt-pattern>div.check {
+	float: left;
+	margin: 7px 0 0 7px;
+	padding: 1px 2px 2px 0;
+	width: 20px;
 	background: white;
 }
 
-div.unselected > div.check {
+div.unselected>div.check {
 	background: #E0E9EF;
 }
 
-div.opt-pattern > div.pattern {
-	margin-left:42px;
+div.opt-pattern>div.pattern {
+	margin-left: 42px;
 }
 
-div.unselected, div.not-chosen {
+div.unselected,div.not-chosen {
 	background: #E0E9EF;
 }
 
-div.selected, div.chosen {
-	/*background: #49FF0F;*/
+div.selected,div.chosen { /*background: #49FF0F;*/
 	background: white;
 }
 
@@ -542,33 +520,32 @@ div.alt-pattern {
 	padding-bottom: 2px;
 }
 
-div.alt-pattern > div.pattern-choice {
+div.alt-pattern>div.pattern-choice {
 	border: 1px solid #C3D3DF;
 	padding: 3px;
 	margin-bottom: 3px;
 	background: white;
 }
 
-div.alt-pattern > div.not-chosen {
+div.alt-pattern>div.not-chosen {
 	background: #E0E9EF;
 }
 
-div.alt-pattern > div.pattern-choice > div.button {
-	float:left;
-	margin:7px 0 0 7px;
-	padding:1px 4px 2px 0;
-	width:20px;
+div.alt-pattern>div.pattern-choice>div.button {
+	float: left;
+	margin: 7px 0 0 7px;
+	padding: 1px 4px 2px 0;
+	width: 20px;
 	background: white;
 }
 
-div.alt-pattern > div.not-chosen > div.button {
+div.alt-pattern>div.not-chosen>div.button {
 	background: #E0E9EF;
 }
 
-div.alt-pattern > div.pattern-choice > div.pattern {
-	margin-left:42px;
+div.alt-pattern>div.pattern-choice>div.pattern {
+	margin-left: 42px;
 }
-
 
 div.conjunct-pattern {
 	border: 1px solid #C3D3DF;
@@ -577,8 +554,7 @@ div.conjunct-pattern {
 	background: white;
 }
 
-
-div.pattern-editor > div.title {
+div.pattern-editor>div.title {
 	border: 1px solid #9BB9CF;
 	background: #D1E2EF;
 	font-weight: bold;
@@ -586,7 +562,7 @@ div.pattern-editor > div.title {
 	text-transform: uppercase;
 }
 
-div.pattern-editor > div.title > span {
+div.pattern-editor>div.title>span {
 	display: block;
 	float: left;
 	padding: 6px 6px 2px;
@@ -598,7 +574,7 @@ form.ctrl {
 	padding: 3px;
 }
 
-form.ctrl > input.submit {
+form.ctrl>input.submit {
 	margin-left: 3px;
 }
 
@@ -609,19 +585,19 @@ div.pattern-editor {
 	margin: 5px 0 0;
 }
 
-div.pattern-editor > div.summary {
+div.pattern-editor>div.summary {
 	font-size: 11px;
 	padding: 5px;
 	margin: 5px 0 0;
 }
 
-div.pattern-editor > div.summary > ul {
+div.pattern-editor>div.summary>ul {
 	display: block;
 	float: left;
 	width: 89%;
 }
 
-div.pattern-editor > div.summary > ul > li {
+div.pattern-editor>div.summary>ul>li {
 	display: block;
 	float: left;
 	border: 1px solid #C3D3DF;
@@ -630,7 +606,7 @@ div.pattern-editor > div.summary > ul > li {
 	background: #EFF8FF;
 }
 
-div.pattern-editor > div.summary > ul > li > span.quantity {
+div.pattern-editor>div.summary>ul>li>span.quantity {
 	display: block;
 	float: left;
 	width: 15px;
@@ -640,15 +616,14 @@ div.pattern-editor > div.summary > ul > li > span.quantity {
 	background: white;
 }
 
-div.pattern-editor > div.summary > ul > li > span.name {
+div.pattern-editor>div.summary>ul>li>span.name {
 	display: block;
 	margin-left: 23px;
 	text-align: center;
 	padding: 3px 3px 0px;
 }
 
-
-div.pattern-editor > div.summary > div.cost {
+div.pattern-editor>div.summary>div.cost {
 	margin-left: 90%;
 	border: 1px solid #C3D3DF;
 	padding: 6px 6px 4px;
@@ -656,25 +631,21 @@ div.pattern-editor > div.summary > div.cost {
 	font-size: 13px;
 }
 
-div.choices-box > div.select {
+div.choices-box>div.select {
 	font-size: 11px;
 	text-transform: uppercase;
 }
 
-div.choices-box > div.select > select {
+div.choices-box>div.select>select {
 	text-transform: none;
 }
 
-div.composition,
-div.linked,
-div.upgrades {
+div.composition,div.linked,div.upgrades {
 	margin: 20px;
 }
 
-
-div.composition > div.members,
-div.linked > div.content,
-div.upgrades > div.content {
+div.composition>div.members,div.linked>div.content,div.upgrades>div.content
+	{
 	padding: 15px;
 	border: 1px solid #C3D3DF;
 	border-top: 0;
@@ -685,7 +656,7 @@ div.upgrades > div.content {
 	overflow: auto;
 }
 
-div.linked > div.content > div.choices-box {
+div.linked>div.content>div.choices-box {
 	background: white;
 	text-align: center;
 	padding: 15px;
@@ -694,7 +665,7 @@ div.linked > div.content > div.choices-box {
 	margin-top: 20px;
 }
 
-div.linked > div.content > div.choices-box > div.select > div {
+div.linked>div.content>div.choices-box>div.select>div {
 	border: 1px solid #C3D3DF;
 	display: inline;
 	padding: 5px;
@@ -708,7 +679,7 @@ div.edit-member {
 	background: #fff;
 }
 
-div.edit-member > div.content {
+div.edit-member>div.content {
 	padding: 20px 10px 10px;
 	border: 1px solid #9BB9CF;
 	border-top: 0;
@@ -718,31 +689,29 @@ div.edit-member > div.content {
 	background: white;
 }
 
-div.edit-member > div.content > div.pattern-editor,
-div.edit-member > div.content > ul.base-info {
-	/*border-color: #9BB9CF;*/
+div.edit-member>div.content>div.pattern-editor,div.edit-member>div.content>ul.base-info
+	{ /*border-color: #9BB9CF;*/
+	
 }
 
-div.export {
-	/*height: 79%;*/
+div.export { /*height: 79%;*/
 	margin: auto;
 	margin-bottom: 0;
 }
 
-div.export > div.content {
-/*	padding: 0;
+div.export>div.content { /*	padding: 0;
 	margin: 0;*/
+	
 }
 
-div.export > div.content > div.review,
-div.export > div.content > div.result {
+div.export>div.content>div.review,div.export>div.content>div.result {
 	/*	padding: 0;
 		margin: 0;*/
-		margin: 20px;
+	margin: 20px;
 }
 
-div.export > div.content > div.review > div.content,
-div.export > div.content > div.result > div.content {
+div.export>div.content>div.review>div.content,div.export>div.content>div.result>div.content
+	{
 	padding: 15px;
 	border: 1px solid #C3D3DF;
 	border-top: 0;
@@ -763,9 +732,8 @@ div.export > div.content > div.result > div.content {
 div.export > div.title > form.ctrl > input.submit {
 	border-color: #6D93AF;
 }*/
-
-div.export > div.content > ul.menu > li > span.value {
-	display:block;
+div.export>div.content>ul.menu>li>span.value {
+	display: block;
 }
 
 div.export pre {
@@ -782,8 +750,7 @@ div.export pre {
 		margin: 0;*/
 }
 
-div.export pre textarea {
-	/*width: 440px;*/
+div.export pre textarea { /*width: 440px;*/
 	height: 360px;
 	/*	padding: 0;
 		margin: 0;*/
@@ -795,15 +762,13 @@ div.result {
 		margin: 0;*/
 }
 
-
-div.review > div.title,
-div.result > div.title  {
+div.review>div.title,div.result>div.title {
 	padding-bottom: 5px;
 	/*	padding: 0;
 		margin: 0;*/
 }
 
-div.result > div.content {
+div.result>div.content {
 	padding: 20px 20px 0px;
 	font-size: 12px;
 	border: 1px solid #C3D3DF;
@@ -812,9 +777,7 @@ div.result > div.content {
 		margin: 0;*/
 }
 
-
-div.result > div.content > p,
-div.result > div.content > div.loading {
+div.result>div.content>p,div.result>div.content>div.loading {
 	border: 1px solid #C3D3DF;
 	padding: 5px;
 	margin: 0 0 20px;
@@ -827,38 +790,38 @@ div.loading {
 	font-size: 14px;
 }
 
-div.result > div.content > p > span{
+div.result>div.content>p>span {
 	display: block;
 	padding: 5px;
 	/*	padding: 0;
 		margin: 0;*/
 }
 
-div.result > div.content > p > span.label {
+div.result>div.content>p>span.label {
 	display: block;
-	padding:8px 0 0 7px;
+	padding: 8px 0 0 7px;
 	font-weight: bold;
 	text-transform: uppercase;
 	/*	padding: 0;
 		margin: 0;*/
 }
 
-div.result > div.content > p > span.value {
+div.result>div.content>p>span.value {
 	padding: 5px 10px;
 	/*	padding: 0;
 		margin: 0;*/
 }
 
-div.result > div.content > p.status {
-
+div.result>div.content>p.status {
+	
 }
 
-div.result > div.content > p.status > span.label {
+div.result>div.content>p.status>span.label {
 	float: left;
 	width: 60px;
 }
 
-div.result > div.content > p.status > span.value {
+div.result>div.content>p.status>span.value {
 	margin-left: 85px;
 	font-weight: bold;
 	font-size: 13px;
@@ -868,15 +831,15 @@ div.result > div.content > p.status > span.value {
 	background: #EFF8FF;
 }
 
-div.result > div.content > p.status > span.error {
+div.result>div.content>p.status>span.error {
 	color: #DF0000;
 }
 
-div.result > div.content > p.message > span.label {
+div.result>div.content>p.message>span.label {
 	text-align: center;
 }
 
-div.result > div.content > p.message > span.success {
+div.result>div.content>p.message>span.success {
 	border: 1px solid #C3D3DF;
 	padding: 10px;
 	text-align: center;
@@ -887,7 +850,7 @@ div.result > div.content > p.message > span.success {
 		margin: 0;*/
 }
 
-div.result > div.content > p.message > span.error {
+div.result>div.content>p.message>span.error {
 	color: #DF0000;
 	border: 1px solid #C3D3DF;
 	padding: 10px;
